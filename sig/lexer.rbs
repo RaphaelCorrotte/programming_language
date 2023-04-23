@@ -1,0 +1,21 @@
+class Lexer
+  CHARS_TYPE: Hash[Symbol, Regexp]
+
+  attr_reader input: String
+  attr_reader position: Integer
+  attr_reader current_char: String
+  attr_reader tokens: Array[Token]
+  attr_reader peek: String | nil
+  attr_reader source_completed?: bool
+  attr_reader source_uncompleted?: bool
+
+  def initialize: -> void
+
+  def consume: -> String
+  def manage: (String) -> untyped
+  def tokenize: -> Array[Token]
+  def next_token: -> Token
+  def skip_spaces!: -> void
+  def advance: (Integer) -> String
+              | () -> String
+end

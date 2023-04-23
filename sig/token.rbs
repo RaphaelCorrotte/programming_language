@@ -1,0 +1,12 @@
+class Token
+  TOKENS: Hash[Symbol, Regexp]
+
+  def self.match: -> Token
+
+  attr_reader type: Symbol
+  attr_reader value: void
+  attr_reader position: Array[Integer]
+  attr_reader length: Integer
+
+  def respond_to_missing?: (String, bool) -> void
+end
